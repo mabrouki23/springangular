@@ -114,7 +114,7 @@
 				<configuration>
 					<executable>ng.cmd</executable>
 					<!-- optional -->
-					<workingDirectory>src/main/resources/frontend</workingDirectory>
+					<workingDirectory>src/main/resources/angularfrontend</workingDirectory>
 					<arguments>
 						<argument>build</argument>
 					</arguments>
