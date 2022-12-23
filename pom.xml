@@ -114,7 +114,7 @@
 				<configuration>
 					<executable>ng</executable>
 					<!-- optional -->
-					<workingDirectory>src\main\resources\angularfrontend\node_modules\.bin</workingDirectory>
+					<workingDirectory>src\main\resources\angularfrontend</workingDirectory>
 					<arguments>
 						<argument>build</argument>
 					</arguments>
