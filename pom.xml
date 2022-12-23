@@ -112,7 +112,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<executable>ng.cmd</executable>
+					<executable>ng</executable>
 					<!-- optional -->
 					<workingDirectory>src/main/resources/angularfrontend</workingDirectory>
 					<arguments>
