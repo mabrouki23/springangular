@@ -12,7 +12,7 @@
 	<groupId>ca.qc.projetSynthese</groupId>
 	<artifactId>projetSynthese</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>kiosk</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -114,12 +114,21 @@
 				<configuration>
 					<executable>ng</executable>
 					<!-- optional -->
-					<workingDirectory>src\main\resources\angularfrontend\node_modules\.bin</workingDirectory>
+					<workingDirectory>src\main\resources\angularfrontend</workingDirectory>
 					<arguments>
 						<argument>build</argument>
 					</arguments>
 				</configuration>
 			</plugin>
+			<plugin>
+     <groupId>com.google.cloud.tools</groupId>
+     <artifactId>appengine-maven-plugin</artifactId>
+     <version>2.4.4</version>
+     <configuration>
+       <version>1</version>
+       <projectId>selforder-372900</projectId>
+     </configuration>
+  </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
