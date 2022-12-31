@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8.0.28
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: selforder
+    networks:
+      springboot-mysql-net:
+
+  springboot:
+    container_name: springboot
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+    networks:
+      springboot-mysql-net:
+    restart: on-failure
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    depends_on:
+      - mysqldb
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80  
+    networks:
+      springboot-mysql-net: 
+  angular:
+    image: nginx:alpine
+    container_name: angular
+    ports: 
+      - 4200:80
+
+networks:
+  springboot-mysql-net:
+  
+  
+    
