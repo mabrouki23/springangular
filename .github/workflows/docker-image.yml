@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag selforder:$(date +%s)
     - name: push the Docker image
-      run: docker login -u hcoinemab -p ${{ secrets.dokerpw }} && docker push selforder:$(date +%s)
+      run: docker login -u hcoinemab -p ${{ secrets.DOCKERPW }} && docker push selforder:$(date +%s)
