@@ -22,6 +22,8 @@ jobs:
       uses: mudlabs/npm-worker@v1.3.0
       with:
        token: ${{ secrets.token }}
+    
+       workingDir: src/main/resources/angularfrontend  
     - uses: actions/checkout@v2
     - name: Angular Full CI
   
