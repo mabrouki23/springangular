@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springbootmysqlkubernetes
+  name: springboot
 spec:
   selector:
     matchLabels:
-      app: springbootmysqlkubernetes
+      app: springboot
   replicas: 3
   template:
     metadata:
       labels:
-        app: springbootmysqlkubernetes
+        app: springboot
     spec:
       containers:
-        - name: springbootmysqlkubernetes
-          image: springbootmysqlkubernetes:1.0
+        - name: springboot
+          image: springboot
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
