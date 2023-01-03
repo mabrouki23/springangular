@@ -19,8 +19,9 @@ jobs:
        version:17
        
       
-    - name: Mvn cmd
-      uses: qcastel/github-actions-maven-cmd@1.0.1     
+    - name: Install Maven
+      uses: yuzhiyongcn/setup-maven@v1.0.0   
+      
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
