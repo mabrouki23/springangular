@@ -17,8 +17,8 @@ jobs:
       uses: Fleshgrinder/setup-java@da5229ba146b252e0b14db4f
        
       
-    - name: Install Maven
-      uses: yuzhiyongcn/setup-maven@v1.0.0   
+    - name: GitHub Action for Maven
+      uses: LucaFeger/action-maven-cli@765e218a50f02a12a7596dc9e7321fc385888a27   
       
     - uses: actions/checkout@v3
     - name: Build the Docker image
