@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest    
 
     steps:
-          
-    - name: Build with Maven
-       
     - uses: actions/checkout@v3
     - name: Build the Docker image    
       run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
