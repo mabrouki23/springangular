@@ -21,7 +21,7 @@ jobs:
   # uses: mudlabs/npm-worker@6ceacf295586f87609a18f669031808d5eb80280
       uses: mudlabs/npm-worker@v1.3.0
       with:
-       token: ${{ github.token }}
+       token: ${{ secrets.token }}
     - uses: actions/checkout@v2
     - name: Angular Full CI
   
