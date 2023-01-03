@@ -16,9 +16,10 @@ jobs:
     
     - name: Setup Node.js environment
       uses: actions/setup-node@v3.5.1
-    - name: npm/yarn/pnpm install
-  # uses: Jaid/action-npm-install@9483da054882538350947c4147de4c8adbf0d597
-      uses: Jaid/action-npm-install@v1.2.4  
+    - name: NPM Worker
+  # You may pin to the exact commit or the version.
+  # uses: mudlabs/npm-worker@6ceacf295586f87609a18f669031808d5eb80280
+      uses: mudlabs/npm-worker@v1.3.0
    
     - uses: actions/checkout@v2
     - name: Angular Full CI
