@@ -1,4 +1,4 @@
 FROM eclipse-temurin:17-jdk-alpine
-RUN ["mvnw", " clean install", "-Dmaven.test.skip=true"]
+WORKDIR /applications
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
