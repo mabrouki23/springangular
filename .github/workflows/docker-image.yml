@@ -13,6 +13,12 @@ jobs:
     steps:
     
     - uses: actions/checkout@v3
+    
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.5.1
+    - name: npm/yarn/pnpm install
+  # uses: Jaid/action-npm-install@9483da054882538350947c4147de4c8adbf0d597
+      uses: Jaid/action-npm-install@v1.2.4  
    
     - uses: actions/checkout@v2
     - name: Angular Full CI
