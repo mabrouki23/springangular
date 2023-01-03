@@ -1,0 +1,23 @@
+name: DockerImgeBuild
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest    
+
+    steps:
+          
+    - name: Install Maven
+      uses:  yuzhiyongcn/setup-maven@v1.0.0       
+    - uses: actions/checkout@v3
+    - name: Build the Docker image    
+      run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
+    - name: Build the Docker image
+      run: docker login -u hocinemab -p ${{secrets.DOCKERPW}} && docker push hocinemab/selforderapp:$(date +%s)
