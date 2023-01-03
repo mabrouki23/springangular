@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Setup Java Development Kits built by Oracle
-      uses: Fleshgrinder/setup-java@1.0.
+      uses: Fleshgrinder/setup-java@da5229ba146b252e0b14db4f
        
       
     - name: Install Maven
