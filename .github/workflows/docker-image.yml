@@ -13,14 +13,11 @@ jobs:
     runs-on: ubuntu-latest    
 
     steps:
-    - name: Set up JDK 19
-      uses: actions/setup-java@v3
-      with:
-        java-version: '19' 
-    - name: action-maven 
-      uses: comchangs/action-maven@v0.4-beta    
-    - name: build with maven
-      run: mvnw clean instal -DskipeTests
+    - name: Composite java action
+  # You may pin to the exact commit or the version.
+  # uses: evryfs/composite-java-action@2d4393c69c59d706ffc23c625abb557b991e6acb
+    - uses: evryfs/composite-java-action@v0.3.11     
+      
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
