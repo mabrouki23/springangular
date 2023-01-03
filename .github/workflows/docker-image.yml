@@ -13,13 +13,12 @@ jobs:
     runs-on: ubuntu-latest    
 
     steps:
-    - name: Setup Java Development Kits built by Oracle
-      uses: Fleshgrinder/setup-java@da5229ba146b252e0b14db4f
-       
-      
-    - name: GitHub Action for Maven
-      uses: LucaFeger/action-maven-cli@765e218a50f02a12a7596dc9e7321fc385888a27   
-      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17' 
+    - name: build with maven
+      run: mvnw clean instal -DskipeTests
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
