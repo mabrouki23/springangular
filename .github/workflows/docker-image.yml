@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: DockerImgeBuild
 
 on:
   push:
@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag selforder:$(date +%s)
-    - name: push the Docker image
-      run: docker login -u hocinemab -p ${{ secrets.DOCKERPW }} && docker push hocinemab/selforder:$(date +%s)
+      run: docker build . --file Dockerfile --tag selforderapp:$(date +%s)
+    - name: Build the Docker image
+      run: docker login -u hocinemab -p ${{secrets.DOCKERPW}} && docker push hocinemab/selforderapp:$(date +%s)
