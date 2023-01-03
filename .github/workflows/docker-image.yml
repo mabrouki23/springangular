@@ -11,13 +11,15 @@ jobs:
     runs-on: ubuntu-latest    
 
     steps:
-    - name: Setup Java JDK
-      uses: actions/setup-java@v3.9.0
-    - name: action-maven
-      uses: comchangs/action-maven@v0.4-beta
+    
+    - uses: actions/checkout@v3
+   
+    - uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+     
     - name: Build with Maven
       run: mvn clean install
-    - uses: actions/checkout@v3
     - name: Build the Docker image    
       run: docker build . --file dockerfile --tag selforderapp:$(date +%s)
     - name: Build the Docker image
