@@ -17,8 +17,8 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17' 
-    - name: Setup Maven 
-      uses: stCarolas/setup-maven@v.4.5    
+    - name: action-maven 
+      uses: comchangs/action-maven@v0.4-beta    
     - name: build with maven
       run: mvnw clean instal -DskipeTests
     - uses: actions/checkout@v3
