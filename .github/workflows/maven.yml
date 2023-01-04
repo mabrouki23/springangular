@@ -24,11 +24,12 @@ jobs:
     - name: All things angular
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
       with:
+        angular_project_dir: springangular/frontend/
         github_access_token: ${{ secrets.TOKEN }} # see the Configuration section for how you can create secrets
         build_configuration: ng build --prod
-        base_href: springangular/springangular/frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        base_href: springangular/frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         deploy_branch: master
-        angular_dist_build_folder: springangular/springangular/src/main/resources/static/    
+        angular_dist_build_folder: springangular/src/main/resources/static/    
     - uses: actions/checkout@v3 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
