@@ -26,9 +26,9 @@ jobs:
       with:
         github_access_token: ${{ secrets.TOKEN }} # see the Configuration section for how you can create secrets
         build_configuration: ng build --prod
-        base_href: /frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        base_href: springangular/springangular/frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         deploy_branch: master
-        angular_dist_build_folder: springangular/src/main/resources/static/    
+        angular_dist_build_folder: springangular/springangular/src/main/resources/static/    
     - uses: actions/checkout@v3 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
