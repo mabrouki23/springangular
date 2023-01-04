@@ -26,7 +26,7 @@ jobs:
       with:
         angular_project_dir: frontend/
         github_access_token: ${{ secrets.TOKEN }} # see the Configuration section for how you can create secrets
-        build_configuration: ng build --prod
+        build_configuration: npm install
         base_href: springangular/frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         deploy_branch: master
         angular_dist_build_folder: springangular/src/main/resources/static/    
