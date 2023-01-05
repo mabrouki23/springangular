@@ -20,17 +20,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  
-    - name: All things angular
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
-      with:
-        angular_project_dir: frontend/
-        github_access_token: ${{ secrets.TOKEN }} # see the Configuration section for how you can create secrets
-        build_configuration: production
-        base_href: springangular/frontend/ 
-        deploy_branch: master
-        angular_dist_build_folder: springangular/src/main/resources/static/    
+       
     - uses: actions/checkout@v3 
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test:headless
+
+    - name: Build
+      run: npm run build:prod
+
+    - name: Deploy
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        publish_dir: src/main/resources/static/
+        enable_jekyll: true
+        
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
